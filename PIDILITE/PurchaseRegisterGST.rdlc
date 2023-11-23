@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="PostingDate">
+          <DataField>PostingDate</DataField>
+        </Field>
+        <Field Name="DocumentType">
+          <DataField>DocumentType</DataField>
+        </Field>
+        <Field Name="DocumentNo">
+          <DataField>DocumentNo</DataField>
+        </Field>
+        <Field Name="Customer_No">
+          <DataField>Customer_No</DataField>
+        </Field>
+        <Field Name="Bill_To_Name">
+          <DataField>Bill_To_Name</DataField>
+        </Field>
+        <Field Name="Bill_to_Address">
+          <DataField>Bill_to_Address</DataField>
+        </Field>
+        <Field Name="Bill_to_Address2">
+          <DataField>Bill_to_Address2</DataField>
+        </Field>
+        <Field Name="bill_to_post_code">
+          <DataField>bill_to_post_code</DataField>
+        </Field>
+        <Field Name="Bill_To_City">
+          <DataField>Bill_To_City</DataField>
+        </Field>
+        <Field Name="Ship_To_Name">
+          <DataField>Ship_To_Name</DataField>
+        </Field>
+        <Field Name="Ship_To_City">
+          <DataField>Ship_To_City</DataField>
+        </Field>
+        <Field Name="LocationCode">
+          <DataField>LocationCode</DataField>
+        </Field>
+        <Field Name="vertical">
+          <DataField>vertical</DataField>
+        </Field>
+        <Field Name="zone">
+          <DataField>zone</DataField>
+        </Field>
+        <Field Name="vpg">
+          <DataField>vpg</DataField>
+        </Field>
+        <Field Name="LocationStateCode">
+          <DataField>LocationStateCode</DataField>
+        </Field>
+        <Field Name="Bill_To_StateCode">
+          <DataField>Bill_To_StateCode</DataField>
+        </Field>
+        <Field Name="NatureofSupply">
+          <DataField>NatureofSupply</DataField>
+        </Field>
+        <Field Name="GSTCustomerType">
+          <DataField>GSTCustomerType</DataField>
+        </Field>
+        <Field Name="BuyerSellerRegNo_DetailedGSTLedgerEntry">
+          <DataField>BuyerSellerRegNo_DetailedGSTLedgerEntry</DataField>
+        </Field>
+        <Field Name="ExternalDocumentNo_DetailedGSTLedgerEntry">
+          <DataField>ExternalDocumentNo_DetailedGSTLedgerEntry</DataField>
+        </Field>
+        <Field Name="Type_DetailedGSTLedgerEntry">
+          <DataField>Type_DetailedGSTLedgerEntry</DataField>
+        </Field>
+        <Field Name="No_DetailedGSTLedgerEntry">
+          <DataField>No_DetailedGSTLedgerEntry</DataField>
+        </Field>
+        <Field Name="Quantity_DetailedGSTLedgerEntry">
+          <DataField>Quantity_DetailedGSTLedgerEntry</DataField>
+        </Field>
+        <Field Name="Quantity_DetailedGSTLedgerEntryFormat">
+          <DataField>Quantity_DetailedGSTLedgerEntryFormat</DataField>
+        </Field>
+        <Field Name="GSTBaseAmount">
+          <DataField>GSTBaseAmount</DataField>
+        </Field>
+        <Field Name="GSTBaseAmountFormat">
+          <DataField>GSTBaseAmountFormat</DataField>
+        </Field>
+        <Field Name="GSTGroupCode">
+          <DataField>GSTGroupCode</DataField>
+        </Field>
+        <Field Name="CGST_Rate">
+          <DataField>CGST_Rate</DataField>
+        </Field>
+        <Field Name="CGST_RateFormat">
+          <DataField>CGST_RateFormat</DataField>
+        </Field>
+        <Field Name="GSTGroupType">
+          <DataField>GSTGroupType</DataField>
+        </Field>
+        <Field Name="SGST_Rate">
+          <DataField>SGST_Rate</DataField>
+        </Field>
+        <Field Name="SGST_RateFormat">
+          <DataField>SGST_RateFormat</DataField>
+        </Field>
+        <Field Name="GSTJurisdictionType">
+          <DataField>GSTJurisdictionType</DataField>
+        </Field>
+        <Field Name="IGST_Rate">
+          <DataField>IGST_Rate</DataField>
+        </Field>
+        <Field Name="IGST_RateFormat">
+          <DataField>IGST_RateFormat</DataField>
+        </Field>
+        <Field Name="CGSTAmount">
+          <DataField>CGSTAmount</DataField>
+        </Field>
+        <Field Name="CGSTAmountFormat">
+          <DataField>CGSTAmountFormat</DataField>
+        </Field>
+        <Field Name="SGSTAmount">
+          <DataField>SGSTAmount</DataField>
+        </Field>
+        <Field Name="SGSTAmountFormat">
+          <DataField>SGSTAmountFormat</DataField>
+        </Field>
+        <Field Name="IGSTAmount">
+          <DataField>IGSTAmount</DataField>
+        </Field>
+        <Field Name="IGSTAmountFormat">
+          <DataField>IGSTAmountFormat</DataField>
+        </Field>
+        <Field Name="GLAccountNo">
+          <DataField>GLAccountNo</DataField>
+        </Field>
+        <Field Name="AmounttoCustomerVendor">
+          <DataField>AmounttoCustomerVendor</DataField>
+        </Field>
+        <Field Name="HSNSACCode_DetailedGSTLedgerEntry">
+          <DataField>HSNSACCode_DetailedGSTLedgerEntry</DataField>
+        </Field>
+        <Field Name="All_Filter">
+          <DataField>All_Filter</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="DocumentDate">
+          <DataField>DocumentDate</DataField>
+        </Field>
+        <Field Name="HSN">
+          <DataField>HSN</DataField>
+        </Field>
+        <Field Name="ServcTaxRegNo">
+          <DataField>ServcTaxRegNo</DataField>
+        </Field>
+        <Field Name="GrossAmt">
+          <DataField>GrossAmt</DataField>
+        </Field>
+        <Field Name="GrossAmtFormat">
+          <DataField>GrossAmtFormat</DataField>
+        </Field>
+        <Field Name="UrdPurch">
+          <DataField>UrdPurch</DataField>
+        </Field>
+        <Field Name="UrdPurchFormat">
+          <DataField>UrdPurchFormat</DataField>
+        </Field>
+        <Field Name="TaxFreePurch">
+          <DataField>TaxFreePurch</DataField>
+        </Field>
+        <Field Name="TaxFreePurchFormat">
+          <DataField>TaxFreePurchFormat</DataField>
+        </Field>
+        <Field Name="OthrCharges">
+          <DataField>OthrCharges</DataField>
+        </Field>
+        <Field Name="OthrChargesFormat">
+          <DataField>OthrChargesFormat</DataField>
+        </Field>
+        <Field Name="BaseVal">
+          <DataField>BaseVal</DataField>
+        </Field>
+        <Field Name="BaseValFormat">
+          <DataField>BaseValFormat</DataField>
+        </Field>
+        <Field Name="ST">
+          <DataField>ST</DataField>
+        </Field>
+        <Field Name="STFormat">
+          <DataField>STFormat</DataField>
+        </Field>
+        <Field Name="Item_GL">
+          <DataField>Item_GL</DataField>
+        </Field>
+        <Field Name="VendGSTIN">
+          <DataField>VendGSTIN</DataField>
+        </Field>
+        <Field Name="VATTIN">
+          <DataField>VATTIN</DataField>
+        </Field>
+        <Field Name="CSTTIN">
+          <DataField>CSTTIN</DataField>
+        </Field>
+        <Field Name="PANNo">
+          <DataField>PANNo</DataField>
+        </Field>
+        <Field Name="PrintDetail">
+          <DataField>PrintDetail</DataField>
+        </Field>
+        <Field Name="LocGSTIN">
+          <DataField>LocGSTIN</DataField>
+        </Field>
+        <Field Name="TaxGrpCode">
+          <DataField>TaxGrpCode</DataField>
+        </Field>
+        <Field Name="TaxBaseAmt">
+          <DataField>TaxBaseAmt</DataField>
+        </Field>
+        <Field Name="TaxBaseAmtFormat">
+          <DataField>TaxBaseAmtFormat</DataField>
+        </Field>
+        <Field Name="TaxAmt">
+          <DataField>TaxAmt</DataField>
+        </Field>
+        <Field Name="TaxAmtFormat">
+          <DataField>TaxAmtFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
